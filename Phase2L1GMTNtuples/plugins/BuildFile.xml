@@ -1,0 +1,27 @@
+<use name="root"/>
+<use name="boost"/>
+<use name="FWCore/Framework"/>
+<use name="FWCore/ParameterSet"/>
+<use name="CommonTools/UtilAlgos"/>
+<use name="CondFormats/DataRecord"/>
+<use name="CondFormats/L1TObjects"/>
+<use name="DataFormats/L1Trigger"/>
+<use name="DataFormats/L1TMuon"/>
+<use name="Geometry/DTGeometry"/>
+<use name="Geometry/CSCGeometry"/>
+<use name="Geometry/RPCGeometry"/>
+<use name="L1Trigger/Phase2L1GMT"/>
+<use name="PhysicsTools/Utilities"/>
+<use name="L1Trigger/L1TNtuples"/>
+<use name="DataFormats/Common"/>
+<use name="DataFormats/HepMCCandidate"/>
+<use name="DataFormats/Math"/>
+<use name="DataFormats/MuonDetId"/>
+<use name="FWCore/Common"/>
+<use name="FWCore/MessageLogger"/>
+<use name="FWCore/ServiceRegistry"/>
+<use name="FWCore/Utilities"/>
+<use name="L1Trigger/Phase2L1GMTNtuples"/>
+<library file="*.cc" name="L1TriggerL1TNtupleGMTPlugins">
+  <flags EDM_PLUGIN="1"/>
+</library>
