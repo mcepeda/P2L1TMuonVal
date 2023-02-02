@@ -24,7 +24,7 @@ scram b -j 8
 The tag for the l1toffline code is taken from [the SWGuideL1TPhase2Instructions twiki](https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideL1TPhase2Instructions#CMSSW_12_5_2_patch1) : it might need to be synched again in the future.
 
 
-To run (uses one of the 12_5 DYToLL_M10To50 files as example):
+To run (using as input one of the new production samples in 12_5, DYToLL_M10To50, as an example):
 ```
 cmsRun test/myconfig125OnlyRead.py
 ```
