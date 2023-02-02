@@ -26,6 +26,7 @@ The tag for the l1toffline code is taken from [the SWGuideL1TPhase2Instructions 
 
 To run (using as input one of the new production samples in 12_5, DYToLL_M10To50, as an example):
 ```
+cd Phase2L1GMTNtuples/
 cmsRun test/myconfig125OnlyRead.py
 ```
 
