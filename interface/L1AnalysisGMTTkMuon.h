@@ -24,7 +24,8 @@ namespace L1Analysis {
     ~L1AnalysisGMTTkMuon();
     void Reset() { l1extra_.Reset(); }
 
-    void SetGmtTkMuon(const edm::Handle<std::vector<l1t::TrackerMuon>> gmtTkMuon, const edm::Handle<vector<l1t::PFCandidate>> l1pfCandidates, unsigned maxL1Extra);
+    void SetGmtTkMuon(const edm::Handle<std::vector<l1t::TrackerMuon>> gmtTkMuon,unsigned maxL1Extra);
+//    void SetGmtTkMuon(const edm::Handle<std::vector<l1t::TrackerMuon>> gmtTkMuon, const edm::Handle<vector<l1t::PFCandidate>> l1pfCandidates, unsigned maxL1Extra);
 
     L1AnalysisGMTTkMuonDataFormat* getData() { return &l1extra_; }
 

@@ -72,13 +72,13 @@ private:
   TTree* tree_;
 
   edm::EDGetTokenT<std::vector<l1t::TrackerMuon> > gmtTkMuonToken_;
-  edm::EDGetTokenT<std::vector<l1t::PFCandidate>> l1PFCandidates_;
+//  edm::EDGetTokenT<std::vector<l1t::PFCandidate>> l1PFCandidates_;
 
 };
 
 L1GMTTkMuonTreeProducer::L1GMTTkMuonTreeProducer(const edm::ParameterSet& iConfig) {
   gmtTkMuonToken_ = consumes<std::vector<l1t::TrackerMuon> >(iConfig.getParameter<edm::InputTag>("gmtTkMuonToken"));
-  l1PFCandidates_ = consumes<std::vector<l1t::PFCandidate>>(iConfig.getParameter<edm::InputTag>("l1PFCandidates"));
+//  l1PFCandidates_ = consumes<std::vector<l1t::PFCandidate>>(iConfig.getParameter<edm::InputTag>("l1PFCandidates"));
   maxL1Extra_ = iConfig.getParameter<unsigned int>("maxL1Extra");
 
   l1Extra = new L1Analysis::L1AnalysisGMTTkMuon();
@@ -106,12 +106,13 @@ void L1GMTTkMuonTreeProducer::analyze(const edm::Event& iEvent, const edm::Event
   iEvent.getByToken(gmtTkMuonToken_, gmtTkMuon);
 
 
-  edm::Handle<std::vector<l1t::PFCandidate>> l1PFCandidates;
-  iEvent.getByToken(l1PFCandidates_, l1PFCandidates);
+//  edm::Handle<std::vector<l1t::PFCandidate>> l1PFCandidates;
+//  iEvent.getByToken(l1PFCandidates_, l1PFCandidates);
 
 
   if (gmtTkMuon.isValid()) {
-    l1Extra->SetGmtTkMuon(gmtTkMuon,l1PFCandidates, maxL1Extra_);
+      l1Extra->SetGmtTkMuon(gmtTkMuon, maxL1Extra_);
+//    l1Extra->SetGmtTkMuon(gmtTkMuon,l1PFCandidates, maxL1Extra_);
   } else {
 
     edm::LogWarning("MissingProduct") << "L1PhaseII gmtTkMuons not found. Branch will not be filled" << std::endl;

@@ -8,7 +8,9 @@ L1Analysis::L1AnalysisGMTTkMuon::L1AnalysisGMTTkMuon() {}
 L1Analysis::L1AnalysisGMTTkMuon::~L1AnalysisGMTTkMuon() {}
 
 //tkmuon gmt
-void L1Analysis::L1AnalysisGMTTkMuon::SetGmtTkMuon(const edm::Handle<std::vector<l1t::TrackerMuon> > gmtTkMuon, const edm::Handle<vector<l1t::PFCandidate>> l1pfCandidates, unsigned maxL1Extra) {
+
+void L1Analysis::L1AnalysisGMTTkMuon::SetGmtTkMuon(const edm::Handle<std::vector<l1t::TrackerMuon> > gmtTkMuon, unsigned maxL1Extra) {
+//void L1Analysis::L1AnalysisGMTTkMuon::SetGmtTkMuon(const edm::Handle<std::vector<l1t::TrackerMuon> > gmtTkMuon, const edm::Handle<vector<l1t::PFCandidate>> l1pfCandidates, unsigned maxL1Extra) {
 
         const float lsb_pt = Phase2L1GMT::LSBpt;
         const float lsb_phi = Phase2L1GMT::LSBphi;
@@ -120,6 +122,11 @@ void L1Analysis::L1AnalysisGMTTkMuon::SetGmtTkMuon(const edm::Handle<std::vector
                         l1extra_.nGmtTkMuons++;
                 }
 
+}
+
+/*              For ParticleFlow Isolation Checks. Lets remove this for now, as it is not a baseline study.
+//              This computes PFIsolation sums in a cone around the muon 
+
 
                 double sumIsoCharged=0;
                 double sumIsoEle=0;
@@ -129,7 +136,7 @@ void L1Analysis::L1AnalysisGMTTkMuon::SetGmtTkMuon(const edm::Handle<std::vector
                 double sumIsoAll=0;
                 double sumIsoAllNoMu=0;
 
-
+ 
                 for (unsigned int part = 0; part < l1pfCandidates->size(); part++) {
 
                         double deltaEta=fabs(lsb_eta*gmtTkMuon->at(i).hwEta()-l1pfCandidates->at(part).eta()); // I'm assuming the eta is converted correctly to not deal with the hwEta..
@@ -176,6 +183,6 @@ void L1Analysis::L1AnalysisGMTTkMuon::SetGmtTkMuon(const edm::Handle<std::vector
                         l1extra_.pfCandzVtx.push_back(l1pfCandidates->at(i).z0());
                         l1extra_.nPFCands++;
         }
-
+*/
 
 }
