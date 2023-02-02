@@ -1,7 +1,7 @@
 //This code is for filling the step1 menu objects, for full tree go for L1AnalysisPhaseII.c
 #include "L1Trigger/Phase2L1GMTNtuples/interface/L1AnalysisGMTTkMuon.h"
 #include "L1Trigger/L1TMuon/interface/MicroGMTConfiguration.h"
-#include "L1Trigger/Phase2L1GMT/interface/Constants.h"
+#include "DataFormats/L1TMuonPhase2/interface/Constants.h"
 #include "TMath.h"
 L1Analysis::L1AnalysisGMTTkMuon::L1AnalysisGMTTkMuon() {}
 
@@ -37,11 +37,15 @@ void L1Analysis::L1AnalysisGMTTkMuon::SetGmtTkMuon(const edm::Handle<std::vector
 
                         l1extra_.gmtTkMuonNStubs.push_back(gmtTkMuon->at(i).stubs().size());
 
-                              //These belong to the new branch by Michalis (that I could not get to work)
+/*                      Tuning the low pt ID can only be done with a special branch by Michalis 
+ *                      These are the changes needed: 
+ *                      https://github.com/bachtis/cmssw/commit/8a43ca2c2a2467e09708b2086d440d0ed064af92
+ *                      Ignore for now! 
+ 
                                 l1extra_.gmtTkMuonIdLUTEta.push_back(gmtTkMuon->at(i).idLUTEta());
                                 l1extra_.gmtTkMuonIdLUTPt.push_back(gmtTkMuon->at(i).idLUTPt());
                                 l1extra_.gmtTkMuonIdLUTQuality.push_back(gmtTkMuon->at(i).idLUTQuality());
-                                
+*/                                
 
 
 
@@ -158,7 +162,7 @@ void L1Analysis::L1AnalysisGMTTkMuon::SetGmtTkMuon(const edm::Handle<std::vector
         }
 
 
-        // This is rather old, check the format has not changed? 
+//      If you want to save all the pfcandidates for further studies (this could be removed) 
 
         for (unsigned int i = 0; i < l1pfCandidates->size(); i++) {
                 //         enum Kind { ChargedHadron=0, Electron=1, NeutralHadron=2, Photon=3, Muon=4 };
@@ -171,33 +175,7 @@ void L1Analysis::L1AnalysisGMTTkMuon::SetGmtTkMuon(const edm::Handle<std::vector
                         l1extra_.pfCandPhi.push_back(l1pfCandidates->at(i).phi());
                         l1extra_.pfCandzVtx.push_back(l1pfCandidates->at(i).z0());
                         l1extra_.nPFCands++;
-                //}
         }
 
 
-        // What can I ask?
-        //     ParticleType id() const { return ParticleType(hwQual()); }
-        //
-        // const PFTrackRef& pfTrack() const { return trackRef_; }
-        //const PFClusterRef& pfCluster() const { return clusterRef_; }
-        //const MuonRef& muon() const { return muonRef_; }
-        /// PUPPI weight (-1 if not available)
-        //    float puppiWeight() const { return puppiWeight_; }
-        //
-        //        void setZ0(float z0) { setVertex(reco::Particle::Point(0, 0, z0)); }
-        //            void setDxy(float dxy) { dxy_ = dxy; }
-        //
-        //                float z0() const { return vz(); }
-        //                    float dxy() const { return dxy_; }
-        //
-        //                        int16_t hwZ0() const { return hwZ0_; }
-        //                            int16_t hwDxy() const { return hwDxy_; }
-        //                                uint16_t hwTkQuality() const { return hwTkQuality_; }
-        //                                    uint16_t hwPuppiWeight() const { return hwPuppiWeight_; }
-        //                                        uint16_t hwEmID() const { return hwEmID_; }
-        //                                            uint64_t encodedPuppi64() const { return encodedPuppi64_; }
-        //
-
-
 }
-

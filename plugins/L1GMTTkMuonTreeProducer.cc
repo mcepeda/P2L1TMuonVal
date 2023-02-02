@@ -42,7 +42,7 @@ Implementation:
 #include "L1Trigger/Phase2L1GMTNtuples/interface/L1AnalysisGMTTkMuon.h"
 #include "L1Trigger/Phase2L1GMTNtuples/interface/L1AnalysisGMTTkMuonDataFormat.h"
 
-#include "L1Trigger/Phase2L1GMT/interface/Constants.h"
+#include "DataFormats/L1TMuonPhase2/interface/Constants.h"
 
 
 //

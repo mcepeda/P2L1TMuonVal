@@ -56,9 +56,11 @@ namespace L1Analysis {
       gmtTkMuonStubsEta1Offline.clear();
       gmtTkMuonStubsEta2Offline.clear();
 
-      gmtTkMuonIdLUTEta.clear();
-      gmtTkMuonIdLUTPt.clear();
-      gmtTkMuonIdLUTQuality.clear();
+//      These only work with the dedicated low pt tuning branch
+//      by Michalis. Check comments in .cc file
+//      gmtTkMuonIdLUTEta.clear();
+//      gmtTkMuonIdLUTPt.clear();
+//      gmtTkMuonIdLUTQuality.clear();
 
 
       gmtTkMuonSumPFIsoAll.clear();
